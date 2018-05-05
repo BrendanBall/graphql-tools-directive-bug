@@ -1,3 +1,14 @@
 type Query {
-    testQuery: String
+    testQuery(dateRange: DateRange): String @upper
+    now: Date
+    tomorrow: Date
+}
+
+directive @upper on FIELD_DEFINITION
+
+scalar Date
+
+input DateRange {
+    start: Date
+    end: Date
 }
