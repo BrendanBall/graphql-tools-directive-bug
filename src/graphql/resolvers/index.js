@@ -7,7 +7,8 @@ export default function rootResolver() {
     Query: {
       testQuery(obj, ctx, args, info) { return 'hello world' },
       now() { return moment().toDate() },
-      tomorrow() { return moment().add(1, 'days') }
+      tomorrow() { return moment().add(1, 'days') },
+      period() { return { start: moment().toDate(), end: moment().add(1, 'days') } }
     },
     Date: dateScalar
   }
